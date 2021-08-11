@@ -54,7 +54,7 @@ class Cloud189CheckIn:
         return result
 
     def login(self, session, username, password):
-        url = "https://cloud.189.cn/api/portal/loginUrl.action?redirectURL=https://cloud.189.cn/web/redirect.html"
+        url = "https://cloud.189.cn/api/portal/loginUrl.action?redirectURL=https://cloud.189.cn/web/redirect.html?returnURL=/main.action"
         r = session.get(url=url)
         captchatoken = re.findall(r"captchaToken' value='(.+?)'", r.text)[0]
         lt = re.findall(r'lt = "(.+?)"', r.text)[0]
