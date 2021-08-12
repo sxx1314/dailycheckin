@@ -123,7 +123,7 @@ def message2qywxapp(qywx_corpid, qywx_agentid, qywx_corpsecret, qywx_touser, con
         "textcard": {
             "title": "签到通知",
             "description": content,
-            "url": "https://github.com/Sitoi/dailycheckin",
+            "url": "https://github.com/sxx1314/dailycheckin",
             "btntxt": "开源项目",
         },
     }
