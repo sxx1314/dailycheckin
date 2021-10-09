@@ -141,7 +141,7 @@ def message2pushplus(pushplus_token, content, pushplus_topic=None):
 
 
 def important_notice():
-    datas = requests.get(url="https://api.github.com/repos/Sitoi/dailycheckin/issues?state=open&labels=通知").json()
+    datas = requests.get(url="https://api.github.com/repos/sxx1314/dailycheckin/issues?state=open&labels=通知").json()
     if datas:
         data = datas[0]
         title = data.get("title")
