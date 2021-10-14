@@ -126,8 +126,8 @@ def message2qywxapp(qywx_corpid, qywx_agentid, qywx_corpsecret, qywx_touser, qyw
                     {
                         "title": "Dailycheckin 签到通知",
                         "thumb_media_id": qywx_media_id,
-                        "author": "Sitoi",
-                        "content_source_url": "https://github.com/sxx1314/dailycheckin",
+                        "author": "Sxx1314",
+                        "content_source_url": "https://github.com/Sxx1314/dailycheckin",
                         "content": content.replace("\n", "<br>"),
                         "digest": content,
                     }
@@ -142,7 +142,7 @@ def message2qywxapp(qywx_corpid, qywx_agentid, qywx_corpsecret, qywx_touser, qyw
             "textcard": {
                 "title": "Dailycheckin 签到通知",
                 "description": content,
-                "url": "https://github.com/sxx1314/dailycheckin",
+                "url": "https://github.com/Sxx1314/dailycheckin",
                 "btntxt": "开源项目",
             },
         }
@@ -160,7 +160,7 @@ def message2pushplus(pushplus_token, content, pushplus_topic=None):
 
 
 def important_notice():
-    datas = requests.get(url="https://api.github.com/repos/sxx1314/dailycheckin/issues?state=open&labels=通知").json()
+    datas = requests.get(url="https://api.github.com/repos/Sxx1314/dailycheckin/issues?state=open&labels=通知").json()
     if datas:
         data = datas[0]
         title = data.get("title")
@@ -208,7 +208,7 @@ def push_message(content_list: list, notice_info: dict):
     except Exception as e:
         print("获取重要通知失败:", e)
     if merge_push is None:
-        if qmsg_key or coolpushskey or qywx_touser or qywx_corpsecret or qywx_agentid or bark_url:
+        if qmsg_key or coolpushskey or qywx_touser or qywx_corpsecret or qywx_agentid or bark_url or pushplus_token:
             merge_push = False
         else:
             merge_push = True
